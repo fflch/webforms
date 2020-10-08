@@ -1,0 +1,596 @@
+declaracao:
+  '#type': checkboxes
+  '#title': Declaração
+  '#description': |
+    <ul>
+    	<li>Antes de iniciar o preenchimento, fa&ccedil;a a leitura cuidadosa do Edital;</li>
+    	<li>Efetue o pagamento do boleto, fa&ccedil;a um PDF ou JPG do mesmo para nos enviar eletronicamente (vide pen&uacute;ltimo campo deste formul&aacute;rio).</li>
+    </ul>
+    PROFICI&Ecirc;NCIA:
+    
+    <ul>
+    	<li>Informar qual l&iacute;ngua estrangeira que voc&ecirc; ir&aacute; apresentar o comprovante de profici&ecirc;ncia (lembrando: Mestrado - Ingl&ecirc;s ou Franc&ecirc;s e Doutorado - escolher uma l&iacute;ngua diferente da realizada no Mestrado entre Ingl&ecirc;s, Franc&ecirc;s, Espanhol, Italiano e Alem&atilde;o);</li>
+    	<li>Voc&ecirc; ter&aacute; at&eacute; o dia 09/2020 para apresentar o Certificado de Profici&ecirc;ncia dentre as op&ccedil;&otilde;es do Edital;</li>
+    	<li>Caso a op&ccedil;&atilde;o seja a prova do Centro de L&iacute;ngua da FFLCH, informamos que a inscri&ccedil;&atilde;o e aplica&ccedil;&atilde;o da prova &eacute; de inteira responsabilidade daquele &oacute;rg&atilde;o (<strong>a sua inscri&ccedil;&atilde;o no Programa de Hist&oacute;ria Social n&atilde;o o credencia para o Exame do Centro de L&iacute;nguas</strong>);</li>
+    	<li>O resultado desta prova ser&aacute; enviado pelo Centro de L&iacute;nguas automaticamente.</li>
+    </ul>
+    
+  '#options':
+    1: 'Declaro que li e aceito os termos do Edital do Processo Seletivo PPGHS/USP 2021'
+  '#required': true
+requerimento_de_inscricao:
+  '#type': fieldset
+  '#title': 'Requerimento de inscrição'
+  nome_completo:
+    '#type': textfield
+    '#title': Candidato
+    '#description': 'Digite o seu nome completo.'
+    '#required': true
+  curso:
+    '#type': select
+    '#title': Curso
+    '#options':
+      1: Mestrado
+      2: Doutorado
+    '#required': true
+  idioma:
+    '#type': checkboxes
+    '#title': Idioma
+    '#options':
+      1: Alemão
+      2: Espanhol
+      3: Francês
+      4: Inglês
+      5: Italiano
+    '#options_display': side_by_side
+    '#required': true
+  ultimo_exame_de_proficiencia:
+    '#type': textfield
+    '#title': 'Último exame de Proficiência'
+    '#description': 'Caso tenha realizado o Exame de Profici&ecirc;ncia nos &uacute;ltimos dois anos, informe a data (MM/AAAA) e a l&iacute;ngua.'
+prova_de_exame_metodologico:
+  '#type': date
+  '#title': 'Prova de Exame metodológico'
+  '#description': 'S&oacute; preencher se voc&ecirc; fez essa prova nos &uacute;ltimos 2 anos'
+  '#format': custom
+  '#format_html': m/Y
+  '#date_date_format': ''
+pessoa_com_deficiencia_:
+  '#type': checkboxes
+  '#title': 'Pessoa com deficiência?'
+  '#options':
+    1: Sim
+    2: Não
+  '#options_display': two_columns
+  '#required': true
+requer_algum_recurso_de_acessibilidade_:
+  '#type': checkboxes
+  '#title': 'Requer algum recurso de acessibilidade?'
+  '#options':
+    1: Sim
+    2: Não
+  '#options_display': two_columns
+indique_os_recursos_de_acessibilidade:
+  '#type': textfield
+  '#title': 'Indique os recursos de acessibilidade'
+voce_ja_foi_desligado_de_curso_de_pos_graduacao_na_usp_mestrado_:
+  '#type': checkboxes
+  '#title': 'Você já foi desligado de curso de pós-graduação na USP (Mestrado/Doutorado) sem ter chegado à defesa?'
+  '#options':
+    1: Sim
+    2: Não
+  '#options_display': two_columns
+  '#required': true
+dados_pessoais:
+  '#type': fieldset
+  '#title': 'Dados Pessoais'
+  data_de_nascimento:
+    '#type': date
+    '#title': 'Data de nascimento'
+    '#required': true
+    '#format': dia_mes_ano
+    '#date_date_format': ''
+  sexo:
+    '#type': select
+    '#title': Sexo
+    '#options':
+      1: Feminino
+      2: Masculino
+    '#required': true
+  cpf1:
+    '#type': textfield
+    '#title': CPF
+    '#size': 16
+  nome_da_mae:
+    '#type': textfield
+    '#title': 'Nome da mãe'
+    '#required': true
+  nome_do_pai:
+    '#type': textfield
+    '#title': 'Nome do pai'
+    '#required': true
+  local_de_nascimento:
+    '#type': custom_composite
+    '#title': 'Local de nascimento'
+    '#element':
+      1:
+        '#type': textfield
+        '#required': true
+        '#title': Cidade
+      2:
+        '#type': textfield
+        '#required': true
+        '#title': UF
+      3:
+        '#type': textfield
+        '#title': País
+  nacionalidade:
+    '#type': textfield
+    '#title': Nacionalidade
+    '#required': true
+  documento_de_identidade:
+    '#type': select
+    '#title': 'Documento Principal de Identificação'
+    '#description': 'Se voc&ecirc; escolheu o passaporte, lembre-se que voc&ecirc; dever&aacute; apresentar o n&uacute;mero do RNE at&eacute; a data da matr&iacute;cula (01/02/2018). Caso contr&aacute;rio, voc&ecirc; ser&aacute; desligado automaticamente.'
+    '#options':
+      1: RG
+      2: 'RNE (Registro Nacional de Estrangeiros)'
+      3: Passaporte
+    '#required': true
+  numero_do_documento:
+    '#type': textfield
+    '#title': Número
+    '#description': 'RG e para estrangeiros RNE ou Passaporte'
+    '#required': true
+  data_de_expedicao_do_documento:
+    '#type': date
+    '#title': 'Data de expedição do documento'
+    '#date_date_format': ''
+  orgao_expedidor_ssp_dpf_etc_:
+    '#type': textfield
+    '#title': 'Órgão expedidor (SSP, DPF, etc.)'
+  data_de_validade_do_documento:
+    '#type': date
+    '#title': 'Data de validade do documento'
+    '#date_date_format': ''
+  ufdocumento:
+    '#type': select
+    '#title': UF
+    '#options': uf
+  endereco:
+    '#type': address
+    '#title': 'Endereço Residencial'
+    '#title_display': ''
+    '#address__title': 'Logradouro (Rua, Avenida, Praça, etc.)'
+    '#address_2__title': Bairro
+    '#city__title': Cidade
+    '#state_province__title': UF
+    '#state_province__type': textfield
+    '#postal_code__title': CEP
+  telefones:
+    '#type': telephone
+    '#title': Telefones
+    '#type__description': '(Celular, Residencial, Escritório, contato)'
+    '#type__type': textfield
+    '#phone__title': Número
+    '#ext__access': false
+    '#phone__international_initial_country': BR
+  email:
+    '#type': email
+    '#title': Email
+    '#required': true
+dados_sobre_a_graduacao:
+  '#type': section
+  '#title': 'Dados sobre a Graduação'
+  nome_da_instituicao:
+    '#type': textfield
+    '#title': 'Nome da instituição'
+    '#required': true
+  data_da_conclusao:
+    '#type': date
+    '#title': 'Data da conclusão'
+    '#description': 'ou da cola&ccedil;&atilde;o de grau'
+    '#required': true
+    '#date_date_format': ''
+  titulo_obtido:
+    '#type': textfield
+    '#title': 'Título obtido'
+    '#description': '(Ex.: bacharel em ..., licenciado em ...)'
+    '#required': true
+  pais:
+    '#type': address
+    '#title': País
+    '#address__access': false
+    '#address_2__access': false
+    '#city__access': false
+    '#state_province__access': false
+    '#postal_code__access': false
+dados_sobre_o_mestrado:
+  '#type': section
+  '#title': 'Dados sobre o Mestrado'
+  nome_da_instituicao_me:
+    '#type': textfield
+    '#title': 'Nome da instituição'
+  data_da_conclusao_me:
+    '#type': date
+    '#title': 'Data da conclusão'
+    '#date_date_format': ''
+  titulo_obtido_me:
+    '#type': textfield
+    '#title': 'Título obtido'
+  pais_me:
+    '#type': address
+    '#title': País
+    '#address__access': false
+    '#address_2__access': false
+    '#city__access': false
+    '#state_province__access': false
+    '#postal_code__access': false
+  _em_qual_lingua_voce_foi_aprovado_s_no_exame_de_proficiencia_no_:
+    '#type': textfield
+    '#title': '  Em qual língua você foi aprovado(s) no Exame de Proficiência no Mestrado?'
+anexos:
+  '#type': section
+  '#title': Anexos
+  diploma_de_graduacao:
+    '#type': managed_file
+    '#title': 'Diploma de graduação'
+    '#file_placeholder': 'Frente / verso'
+    '#max_filesize': '3'
+    '#file_extensions': 'jpg pdf'
+  historico_escolar_da_graduacao:
+    '#type': managed_file
+    '#title': 'Histórico escolar da graduação'
+    '#max_filesize': '4'
+    '#file_extensions': 'jpg pdf'
+  curriculo_lattes_:
+    '#type': managed_file
+    '#title': 'Currículo (lattes)'
+    '#required': true
+    '#max_filesize': '4'
+    '#file_extensions': pdf
+  documento_de_identidade1:
+    '#type': managed_file
+    '#title': 'Documento de identidade'
+    '#required': true
+    '#max_filesize': '2'
+    '#file_extensions': 'jpg png pdf'
+  cpf:
+    '#type': managed_file
+    '#title': CPF
+    '#max_filesize': '2'
+    '#file_extensions': 'jp gpng pdf'
+  diploma_de_mestre:
+    '#type': managed_file
+    '#title': 'Diploma de mestre'
+    '#file_placeholder': 'Frente / verso'
+    '#max_filesize': '3'
+    '#file_extensions': 'jpg pdf'
+  historico_mestrado:
+    '#type': managed_file
+    '#title': 'Histórico mestrado'
+    '#max_filesize': '4'
+    '#file_extensions': 'jpg pdf'
+  comprovante_de_pagamento:
+    '#type': managed_file
+    '#title': 'Comprovante de pagamento'
+    '#required': true
+    '#max_filesize': '2'
+    '#file_extensions': 'jpg png pdf'
+  titulo_de_eleitor:
+    '#type': managed_file
+    '#title': 'Título de eleitor'
+    '#max_filesize': '2'
+  quitacao_do_servico_militar:
+    '#type': managed_file
+    '#title': 'Quitação do serviço militar'
+    '#max_filesize': '2'
+    '#file_extensions': 'jpg png pdf'
+  autodeclaracao_etnico_racial:
+    '#type': managed_file
+    '#title': 'Autodeclaração étnico-racial'
+    '#max_filesize': '2'
+    '#file_extensions': 'pdf doc docx'
+  projeto_de_pesquisa:
+    '#type': managed_file
+    '#title': 'Projeto de Pesquisa'
+    '#required': true
+    '#max_filesize': '2'
+    '#file_extensions': 'pdf doc docx'
+indicacao_de_orientador_pretendido:
+  '#type': select
+  '#title': 'Indicação de orientador pretendido'
+  '#options': parecerista_ccp
+proficiencia_status:
+  '#type': checkboxes
+  '#title': 'Proficiência Status'
+  '#options':
+    1: 'INDEFERIDO (Alemão)'
+    2: 'INDEFERIDO (Espanhol)'
+    3: 'INDEFERIDO (Francês)'
+    4: 'INDEFERIDO (Inglês)'
+    5: 'INDEFERIDO (Italiano)'
+    6: 'DEFERIDO (Alemão)'
+    7: 'DEFERIDO (Espanhol)'
+    8: 'DEFERIDO (Francês)'
+    9: 'DEFERIDO (Inglês)'
+    10: 'DEFERIDO (Italiano)'
+    11: 'REPROVADO (Alemão)'
+    12: 'REPROVADO (Espanhol)'
+    13: 'REPROVADO (Francês)'
+    14: 'REPROVADO (Inglês)'
+    15: 'REPROVADO (Italiano)'
+    16: 'APROVADO (Alemão)'
+    17: 'APROVADO (Espanhol)'
+    18: 'APROVADO (Francẽs)'
+    19: 'APROVADO (Inglês)'
+    20: 'APROVADO (Italiano)'
+    21: DISPENSADO
+    22: AUSENTE
+  '#access_create_roles':
+    - administrator
+    - fflch
+prova_metodologica_status:
+  '#type': checkboxes
+  '#title': 'Prova metodológica status'
+  '#options':
+    1: APROVADO(A)
+    2: REPROVADO(A)
+    3: 'APROVADO(A) - Recurso DEFERIDO'
+    4: 'REPROVADO(A) - Recurso INDEFERIDO'
+    5: DISPENSADO(A)
+    6: AUSENTE
+    7: DESCLASSIFICADO(A)
+  '#access_create_roles':
+    - administrator
+    - fflch
+nota_da_prova_metodologica:
+  '#type': number
+  '#title': 'Nota da Prova Metodológica'
+  '#access_create_roles':
+    - administrator
+    - fflch
+  '#max': 10
+numero_usp:
+  '#type': number
+  '#title': 'Número USP'
+  '#access_create_roles':
+    - administrator
+    - fflch
+resultado_final:
+  '#type': select
+  '#title': 'Resultado final'
+  '#options':
+    1: '1|Candidato(a) aceito para Matrícula (poderá ser matriculado até Fev/2021)'
+    2: '3|Candidato(a) NÃO aceito para matrícula (provas válidas por 2 anos)'
+  '#access_create_roles':
+    - administrator
+    - fflch
+requerimento:
+  '#type': 'entity_print_attachment:pdf'
+  '#title': Requerimento
+  '#display_on': view
+  '#view_mode': twig
+  '#template': |
+    <div style="font-family:ARIAL;font-size:10px;">
+    <p><strong>Programa: HISTÓRIA SOCIAL</strong></p>
+    
+    <p><strong>Nome (por extenso):</strong> {{ data.nome_completo }}</p>
+    
+    <p align="justify">Requer sua INSCRIÇÃO para participar do processo seletivo para ingresso no Curso de Pós-Graduação da Faculdade de Filosofia, Letras e Ciências Humanas da Universidade de São Paulo, conforme os dados abaixo:</p>
+    
+    <table border="2" cellpadding="15">
+    	<tbody>
+    		<tr>
+    			<td>
+    			<table border="0" cellpadding="0" cellspacing="0" style="width:2200px">
+    				<tbody>
+    					<tr>
+    						<td><strong>Curso pretendido:</strong> {{ webform_token('[webform_submission:values:curso]', webform_submission, [], options) }}</td>
+    						<td><strong>Programa:</strong> História Social</td>
+    					</tr>
+    				</tbody>
+    			</table>
+    
+    			<p class="rtejustify"><strong>De acordo com o Edital do Programa de Pós-graduação no qual pretende ingressar, realizará o Exame de Proficiência durante o processo seletivo? </strong>______<strong>. Em qual língua estrangeira? (pode indicar mais de uma)</strong>: {{ webform_token('[webform_submission:values:idioma]', webform_submission, [], options) }}.</p>
+    
+    			<p class="rtejustify">Se fez exame de proficiência nesta Faculdade nos últimos 2 anos, indicar a data e o exame realizado. Ficará a critério de cada programa de pós-graduação validar ou não o referido exame. Data: <strong> {{ webform_token('[webform_submission:values:ultimo_exame_de_proficiencia]', webform_submission, [], options) }} .</strong></p>
+    
+    			<p class="rtejustify"><strong>Pessoa com deficiência? </strong> {{ webform_token('[webform_submission:values:pessoa_com_deficiencia_]', webform_submission, [], options) }}. <strong>Requer algum recurso de acessibilidade? </strong> {{ webform_token('[webform_submission:values:requer_algum_recurso_de_acessibilidade_]', webform_submission, [], options) }}.</p>
+    
+    			<p><strong>Se sim, indique os recursos de acessibilidade: </strong> {{ data.indique_os_recursos_de_acessibilidade }}</p>
+    			</td>
+    		</tr>
+    	</tbody>
+    </table>
+    
+    <hr />
+    <div align="center"><strong>DADOS PESSOAIS</strong></div>
+    
+    <hr />
+    <p><strong>Nome da Mãe:</strong> {{ data.nome_da_mae }} <strong>Pai:</strong> {{ data.nome_do_pai }} <strong>Sexo:</strong> {{ webform_token('[webform_submission:values:sexo]', webform_submission, [], options) }}</p>
+    
+    <p><strong>Data de Nascimento:</strong> {{ data.data_de_nascimento }}. <strong>Local de Nascimento:</strong> {{ data.local_de_nascimento }} <strong>Nacionalidade:</strong> {{ data.nacionalidade }}</p>
+    
+    <p><strong>Núm. Documento de Identidade ({{ webform_token('[webform_submission:values:documento_de_identidade]', webform_submission, [], options) }}):</strong> {{ data.numero_do_documento }} <strong>UF:</strong> {{ data.ufdocumento }}</p>
+    
+    <p><strong>Data da Expedição:</strong> {{ data.data_de_expedicao_do_documento }}. <strong>Validade:</strong> {{ data.data_de_validade_do_documento }}. <strong>CPF:</strong> {{ data.cpf1 }}</p>
+    
+    <p><strong>Endereço:</strong> {{ data.endereco }}.</p>
+    
+    <p><strong>Fone(s):</strong> {{ data.telefones }} <strong>E-mail(s):</strong> {{ data.email }}</p>
+    
+    <hr /><br.><strong>FORMAÇÃO ACADÊMICA</strong></br.></div>
+    
+    <hr />
+    <table border="0" cellpadding="0" cellspacing="0" style="width: 606px;">
+    	<tbody>
+    		<tr>
+    			<td>
+    			<h6 class="rtecenter"><strong>GRADUAÇÃO</strong></h6>
+    			</td>
+    			<td style="width: 456px;">
+    			<h6 class="rtecenter"><strong>MESTRADO</strong></h6>
+    			</td>
+    		</tr>
+    		<tr>
+    			<td>
+    			<h6><strong>Instituição:</strong> {{ data.nome_da_instituicao }}</h6>
+    
+    			<h6><strong>Pais:</strong> {{ data.pais }}</h6>
+    
+    			<h6><strong>Curso:</strong> {{ data.titulo_obtido }}</h6>
+    
+    			<h6><strong>Conclusão:</strong> {{ data.data_da_conclusao }}</h6>
+    			</td>
+    			<td style="width: 456px;">
+    			<h6><strong>Instituição:</strong> {{ data.nome_da_instituicao_me }}</h6>
+    
+    			<h6><strong>País:</strong> {{ data.pais_me }}</h6>
+    
+    			<h6><strong>Curso:</strong> {{ data.titulo_obtido_me }}</h6>
+    
+    			<h6><strong>Conclusão:</strong> {{ data.data_da_conclusao_me }}</h6>
+    
+    			<h6><strong>Em qual língua você foi aprovado(s) no Exame de Proficiência no Mestrado?</strong> {{ data._em_qual_lingua_voce_foi_aprovado_s_no_exame_de_proficiencia_no_ }}</h6>
+    			</td>
+    		</tr>
+    	</tbody>
+    </table>
+    
+    <h6 align="right">{{ created|date('d/m/Y - H:i') }} - Preenchido por <em> <u> {{ data.nome_completo }} </u> </em></h6>
+    
+    <hr />
+    <h4 align="center"><strong>RESULTADO DA SELEÇÃO</strong></h4>
+    
+    <hr />
+    <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+    	<tbody>
+    		<tr>
+    			<td>
+    			<h6><strong>[&nbsp;&nbsp;&nbsp; ] <u>APROVADO</u></strong>&nbsp; [&nbsp;&nbsp;&nbsp; ] <strong><u>REPROVADO.</u> Se aprovado, em qual curso?&nbsp; [&nbsp;&nbsp; ] ME&nbsp;&nbsp;&nbsp;&nbsp; [&nbsp;&nbsp; ] DO&nbsp;&nbsp;&nbsp; [&nbsp;&nbsp; ] DD</strong></h6>
+    
+    			<h6><strong>Orientação Acadêmica?&nbsp;&nbsp; [&nbsp;&nbsp; ] SIM&nbsp;&nbsp;&nbsp;&nbsp; [&nbsp;&nbsp; ] NÃO. NOVA MATRÍCULA? </strong>(aluno desligado anteriormente) <strong>&nbsp; [&nbsp;&nbsp; ] SIM&nbsp;&nbsp;&nbsp;&nbsp; [&nbsp;&nbsp; ] NÃO</strong></h6>
+    
+    			<h6>Orientador(a): _________________________________________ Proficiência: _________________________________</h6>
+    
+    			<h6><strong>Funcionário(a) responsável: ______________________________________</strong>________</h6>
+    			</td>
+    		</tr>
+    	</tbody>
+    </table>
+    
+requerimento2:
+  '#type': 'entity_print_attachment:pdf'
+  '#title': Requerimento2
+  '#display_on': view
+  '#view_mode': twig
+  '#template': |
+    <div style="font-family:ARIAL;font-size:10px;">
+    <p><strong>Programa: HISTÓRIA SOCIAL</strong></p>
+    <p><strong>Nome (por extenso):</strong> {{ data.nome_completo }} </p>
+    
+    <p align="justify">Requer sua INSCRIÇÃO para participar do processo seletivo para ingresso no Curso de Pós-Graduação da Faculdade de Filosofia, Letras e Ciências Humanas da Universidade de São Paulo, conforme os dados abaixo:</p>
+    
+    <table border="2" cellpadding="15">
+    	<tbody>
+    		<tr>
+    			<td>
+    			<table border="0" cellpadding="0" cellspacing="0" style="width:2200px">
+    				<tbody>
+    					<tr>
+    						<td><strong>Curso pretendido:</strong> {{ webform_token('[webform_submission:values:curso]', webform_submission, [], options) }}</td>
+    						<td><strong>Programa:</strong> História Social</td>
+    					</tr>
+    				</tbody>
+    			</table>
+    
+    			<p class="rtejustify"><strong>De acordo com o Edital do Programa de Pós-graduação no qual pretende ingressar, realizará o Exame de Proficiência durante o processo seletivo? </strong>______<strong>. Em qual língua estrangeira? (pode indicar mais de uma)</strong>: {{ webform_token('[webform_submission:values:idioma]', webform_submission, [], options) }}.</p>
+    
+    			<p class="rtejustify">Se fez exame de proficiência nesta Faculdade nos últimos 2 anos, indicar a data e o exame realizado. Ficará a critério de cada programa de pós-graduação validar ou não o referido exame. Data: <strong> {{ webform_token('[webform_submission:values:ultimo_exame_de_proficiencia]', webform_submission, [], options) }} .</strong></p>
+    
+    			<p class="rtejustify"><strong>Pessoa com deficiência? </strong> {{ webform_token('[webform_submission:values:pessoa_com_deficiencia_]', webform_submission, [], options) }}. <strong>Requer algum recurso de acessibilidade? </strong> {{ webform_token('[webform_submission:values:requer_algum_recurso_de_acessibilidade_]', webform_submission, [], options) }}.</p>
+    
+    			<p><strong>Se sim, indique os recursos de acessibilidade: </strong> {{ data.indique_os_recursos_de_acessibilidade }}</p>
+    			</td>
+    		</tr>
+    	</tbody>
+    </table>
+    
+    <hr />
+    <div align="center"><strong>DADOS PESSOAIS</strong></div>
+    
+    <hr />
+    <p><strong>Nome da Mãe:</strong> {{ data.nome_da_mae }} <strong>Pai:</strong> {{ data.nome_do_pai }} <strong>Sexo:</strong> {{ webform_token('[webform_submission:values:sexo]', webform_submission, [], options) }}</p>
+    
+    <p><strong>Data de Nascimento:</strong> {{ data.data_de_nascimento }}. <strong>Local de Nascimento:</strong> {{ data.local_de_nascimento }} <strong>Nacionalidade:</strong> {{ data.nacionalidade }}</p>
+    
+    <p><strong>Núm. Documento de Identidade ({{ webform_token('[webform_submission:values:documento_de_identidade]', webform_submission, [], options) }}):</strong> {{ data.numero_do_documento }} <strong>UF:</strong> {{ data.ufdocumento }}</p>
+    
+    <p><strong>Data da Expedição:</strong> {{ data.data_de_expedicao_do_documento }}. <strong>Validade:</strong> {{ data.data_de_validade_do_documento }}. <strong>CPF:</strong> {{ data.cpf1 }}</p>
+    
+    <p><strong>Endereço:</strong> {{ data.endereco }}.</p>
+    
+    <p><strong>Fone(s):</strong> {{ data.telefones }} <strong>E-mail(s):</strong> {{ data.email }}</p>
+    
+    <hr /><br.
+    <div align="center"><strong>FORMAÇÃO ACADÊMICA</strong></div>
+    
+    <hr />
+    <table border="0" cellpadding="0" cellspacing="0" style="width:2200px">
+    	<tbody>
+    		<tr>
+    			<td>
+    			<p><strong>GRADUAÇÃO</strong></p>
+    			</td>
+    			<td>
+    			<p><strong>MESTRADO</strong></p>
+    			</td>
+    		</tr>
+    		<tr>
+    			<td>
+    			<p><strong>Instituição:</strong> {{ data.nome_da_instituicao }}</p>
+    
+    			<p><strong>Pais:</strong> {{ data.pais }}</p>
+    
+    			<p><strong>Curso:</strong> {{ data.titulo_obtido }}</p>
+    
+    			<p><strong>Conclusão:</strong> {{ data.data_da_conclusao }}</p>
+    			</td>
+    			<td>
+    			<p><strong>Instituição:</strong> {{ data.nome_da_instituicao_me }}</p>
+    
+    			<p><strong>País:</strong> {{ data.pais_me }}</p>
+    
+    			<p><strong>Curso:</strong> {{ data.titulo_obtido_me }}</p>
+    
+    			<p><strong>Conclusão:</strong> {{ data.data_da_conclusao_me }}</p>
+    
+    			<p><strong>Em qual língua você foi aprovado(s) no Exame de Proficiência no Mestrado?</strong> {{ data._em_qual_lingua_voce_foi_aprovado_s_no_exame_de_proficiencia_no_ }}</p>
+    			</td>
+    		</tr>
+    	</tbody>
+    </table>
+    
+    <p align="right"> {{ created|date('d/m/Y - H:i') }} - Preenchido por <em> <u> {{ data.nome_completo }} </u> </em></p>
+    
+    <hr />
+    <h4 align="center"><strong>RESULTADO DA SELEÇÃO</strong></h4>
+    
+    <hr />
+    <table border="0" cellpadding="0" cellspacing="0" style="width:2200px">
+    	<tbody>
+    		<tr>
+    			<td>
+    			<h3><strong>[&nbsp;&nbsp;&nbsp; ] <u>APROVADO</u></strong>&nbsp; [&nbsp;&nbsp;&nbsp; ] <strong><u>REPROVADO.</u> Se aprovado, em qual curso?&nbsp; [&nbsp;&nbsp; ] ME&nbsp;&nbsp;&nbsp;&nbsp; [&nbsp;&nbsp; ] DO&nbsp;&nbsp;&nbsp; [&nbsp;&nbsp; ] DD</strong></h3>
+    
+    			<p><strong>Orientação Acadêmica?&nbsp;&nbsp; [&nbsp;&nbsp; ] SIM&nbsp;&nbsp;&nbsp;&nbsp; [&nbsp;&nbsp; ] NÃO. NOVA MATRÍCULA? </strong>(aluno desligado anteriormente) <strong>&nbsp; [&nbsp;&nbsp; ] SIM&nbsp;&nbsp;&nbsp;&nbsp; [&nbsp;&nbsp; ] NÃO</strong></p>
+    
+    			<h4>Orientador(a): _________________________________________ Proficiência: _________________________________</h4>
+    
+    			<p><strong>Funcionário(a) responsável: ______________________________________</strong>________</p>
+    			</td>
+    		</tr>
+    	</tbody>
+    </table>
+    </div>
