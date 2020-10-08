@@ -1,0 +1,133 @@
+importante:
+  '#type': section
+  '#title': Importante
+  '#description': 'O seu pedido de credenciamento ser&aacute; apreciado pela CCP e, ap&oacute;s ser aprovado em reuni&atilde;o, ser&aacute; lan&ccedil;ado no Sistema Janus; Os pedidos de recredenciamento s&oacute; entrar&atilde;o no Sistema, ap&oacute;s o vencimento do credenciamento atual. O docente s&oacute; poder&aacute; abrir vaga no pr&oacute;ximo processo seletivo, caso a sua situa&ccedil;&atilde;o esteja regularizada. Ou seja, com o pedido de (re)credenciamento em dia no sistema JANUS.'
+  '#help_display': title_after
+nome_completo:
+  '#type': textfield
+  '#title': 'Nome completo'
+  '#required': true
+numero_usp:
+  '#type': number
+  '#title': 'Número USP'
+  '#required': true
+assunto:
+  '#type': select
+  '#title': Assunto
+  '#options':
+    1: '1o. Credenciamento'
+    2: Recredenciamento
+  '#required': true
+curso:
+  '#type': select
+  '#title': Nível
+  '#options':
+    1: Mestrado
+    2: Doutorado
+    3: Ambos
+  '#required': true
+curriculo_lattes:
+  '#type': url
+  '#title': 'Currículo lattes'
+  '#description': 'Insira o link do Curr&iacute;culo lattes'
+  '#required': true
+data_do_re_credenciamento:
+  '#type': date
+  '#title': 'Data do (Re)Credenciamento'
+  '#format': dia_mes_ano
+  '#date_date_format': ''
+e_mail:
+  '#type': email
+  '#title': E-mail
+  '#required': true
+status:
+  '#type': select
+  '#title': Status
+  '#options':
+    1: Recebido
+    2: 'Enviado para parecerista'
+    3: 'Está na pauta da próxima CCP'
+    4: 'Aprovado e encaminhado à CPG'
+    5: 'Reprovado (doc. disponível para retirada)'
+  '#default_value': '2'
+  '#access_create_roles':
+    - administrator
+    - fflch
+  '#access_create_users':
+    - '92'
+    - '1'
+parecerista_ccp:
+  '#type': select
+  '#title': 'Parecerista da CCP'
+  '#options': parecerista_ccp
+  '#default_value': '9826053'
+  '#access_create_roles':
+    - administrator
+    - fflch
+  '#access_create_users':
+    - '92'
+    - '1'
+captcha:
+  '#type': captcha
+  '#captcha_type': image_captcha/Image
+  '#captcha_title': 'Qual o código que está na imagem?'
+  '#captcha_description': 'Digite os caracteres exibidos na imagem.'
+imprimir_pdf:
+  '#type': 'entity_print_attachment:pdf'
+  '#title': 'IMPRIMIR PDF'
+  '#display_on': view
+  '#view_mode': twig
+  '#template': |
+    <p cellspacing="3"><strong>Programa:</strong>&nbsp;HISTÓRIA SOCIAL<br />
+    <strong>Interessado(a) Prof(a). Dr(a):</strong>&nbsp; {{ data.nome_completo }}<br />
+    <strong>Código USP: </strong>{{ data.numero_usp }}<br />
+    <strong>Assunto:</strong> {{ webform_token('[webform_submission:values:assunto]', webform_submission, [], options) }}<br />
+    <strong>Nível:</strong> {{ webform_token('[webform_submission:values:curso]', webform_submission, [], options) }}<br />
+    <br />
+    <strong>Aprovado pela CCP na reuni&atilde;o de ____/____/________</strong></p>
+    
+    <hr />
+    <table align="right" border="0" cellpadding="1" cellspacing="1" style="width:2000px">
+    	<tbody>
+    		<tr>
+    			<td>Submetido em {{ created|date('d/m/Y H:i') }}, por {{ data.nome_completo }}</td>
+    		</tr>
+    	</tbody>
+    </table>
+    &nbsp;
+    
+    <p>&nbsp;</p>
+    &nbsp;
+    
+    <table border="0" cellpadding="1" cellspacing="1" style="text-align:justify">
+    	<tbody>
+    		<tr>
+    			<td><strong>Informo, para os devidos fins, que a documentação foi conferida, estando em condições de ser enviada para apreciação da CPG.</strong></td>
+    		</tr>
+    	</tbody>
+    </table>
+    
+    <p><br />
+    <br />
+    &nbsp;</p>
+    
+    <h4><strong>São Paulo, _____/_____/__________</strong></h4>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    &nbsp;
+    
+carta_do_interessado:
+  '#type': managed_file
+  '#title': 'Carta do Interessado'
+  '#required': true
+  '#format_items': comma
+  '#file_placeholder': 'Carta do interessado devidamente assinada.'
+  '#max_filesize': '20'
+  '#file_extensions': 'gif jpg jpeg png bmp pdf doc docx'
