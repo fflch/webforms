@@ -1,0 +1,139 @@
+curso:
+  '#type': select
+  '#title': Curso
+  '#options':
+    1: Mestrado
+    2: Doutorado
+  '#required': true
+numero_usp:
+  '#type': number
+  '#title': 'Número USP'
+  '#required': true
+nome_completo:
+  '#type': textfield
+  '#title': 'Nome completo'
+  '#required': true
+e_mail:
+  '#type': email
+  '#title': E-mail
+  '#required': true
+orientador_a_:
+  '#type': select
+  '#title': Orientador(a)
+  '#options': solicitante
+  '#required': true
+motivo_do_trancamento:
+  '#type': select
+  '#title': 'Motivo do trancamento'
+  '#options':
+    1: Saúde
+    2: Profissional
+    3: 'Saúde de terceiros'
+  '#required': true
+carta_do_aluno:
+  '#type': document_file
+  '#title': 'Justificativa do aluno'
+  '#required': true
+  '#file_placeholder': 'Neste campo voc&ecirc; dever&aacute; inserir o arquivo eletr&ocirc;nico (.PDF .JPG), contendo a justificativa do pedido devidamente assinada.'
+  '#max_filesize': '2'
+  '#file_extensions': 'pdf doc docx odt'
+manifestacao_do_orientador:
+  '#type': document_file
+  '#title': 'Termo do orientador'
+  '#required': true
+  '#file_placeholder': 'Neste campo voc&ecirc; dever&aacute; inserir o arquivo eletr&ocirc;nico (.pdf .doc .docx) da carta do orientador informando estar de acordo com o seu pedido (<strong>colher a assinatura</strong>).'
+  '#max_filesize': '2'
+  '#file_extensions': ' df doc docx odt'
+copia_do_trabalho:
+  '#type': document_file
+  '#title': Comprovante
+  '#required': true
+  '#file_placeholder': |
+    Neste campo, voc&ecirc; dever&aacute; inserir o arquivo eletr&ocirc;nico (.PDF ou .JPG) da motiva&ccedil;&atilde;o do pedido de trancamento:
+    <ul>
+    	<li>Manifesta&ccedil;&atilde;o do Empregador (Motivo Profissional);</li>
+    	<li>Atestado M&eacute;dico (Motivo de Sa&uacute;de) contendo a CID (c&oacute;digo de identifica&ccedil;&atilde;o da doen&ccedil;a), a necessidade do afastamento e o per&iacute;odo indicado (m&aacute;ximo de 12 meses) e a indica&ccedil;&atilde;o da data in&iacute;cio (a partir de ...)</li>
+    </ul>
+    
+  '#file_extensions': pdf
+manifestacao:
+  '#type': document_file
+  '#title': 'Cronograma de atividades'
+  '#required': true
+  '#file_placeholder': 'Neste campo voc&ecirc; dever&aacute; inserir o arquivo eletr&ocirc;nico (.pdf .doc .docx) contendo as atividades que ser&atilde;o desenvolvidas <strong>ap&oacute;s</strong> <strong>o per&iacute;odo de trancamento</strong>.'
+  '#max_filesize': '2'
+  '#file_extensions': ' df doc docx odt'
+status:
+  '#type': select
+  '#title': Status
+  '#options':
+    1: Recebido
+    2: 'Enviado para parecerista'
+    3: 'Está na pauta da próxima CCP'
+    4: 'Aprovado e encaminhado à CPG'
+    5: 'Reprovado (doc. disponível para retirada)'
+  '#default_value': '2'
+  '#access_create_roles':
+    - authenticated
+  '#access_create_users':
+    - '92'
+    - '1'
+parecerista_ccp:
+  '#type': select
+  '#title': 'Parecerista da CCP'
+  '#options': parecerista_ccp
+  '#default_value': '9826053'
+  '#access_create_roles':
+    - authenticated
+  '#access_create_users':
+    - '92'
+    - '1'
+captcha:
+  '#type': captcha
+  '#captcha_type': image_captcha/Image
+  '#captcha_title': 'Qual o código que está na imagem?'
+  '#captcha_description': 'Digite os caracteres exibidos na imagem.'
+pdf:
+  '#type': 'entity_print_attachment:pdf'
+  '#title': 'IMPRIMIR PDF'
+  '#display_on': view
+  '#view_mode': twig
+  '#template': |
+    <div style="font-family:ARIAL; font-size:14px;">
+    <p cellspacing="3"><strong>Programa:</strong>&nbsp; História Social<br />
+    <strong>Nome do(a) aluno(a):</strong> {{ data.nome_completo }}<br />
+    <strong>Código USP: </strong>{{ data.numero_usp }}&nbsp; &nbsp; &nbsp; <strong>Curso:</strong> {{ webform_token('[webform_submission:values:curso]', webform_submission, [], options) }}<br />
+    <strong>Orientador(a):</strong> {{ webform_token('[webform_submission:values:orientador_a_]', webform_submission, [], options) }}<br />
+    <strong>Período de trancamento concedido:</strong> <strong>________ dias, a partir de ____/____/________<br />
+    Motivo do Trancamento:&nbsp;</strong> {{ webform_token('[webform_submission:values:motivo_do_trancamento]', webform_submission, [], options) }}<br />
+    <strong>Aprovado pela CCP na reunião de ____/____/________</strong></p></div>
+    
+    <hr />
+    <table align="right" border="0" cellpadding="1" cellspacing="1" style="width:2000px">
+    	<tbody>
+    		<tr>
+    			<td>Submetido em {{ created|date('d/m/Y - H:i') }}, por {{ data.nome_completo }}</td>
+    		</tr>
+    	</tbody>
+    </table>
+    &nbsp;
+    
+    <p>&nbsp;</p>
+    
+    <table border="0" cellpadding="1" cellspacing="1" style="text-align:justify">
+    	<tbody>
+    		<tr>
+    			<td>Informo, para os devidos fins, que essa ocorrência está devidamente cadastrada no Sistema Janus e a documentação foi conferida, estando em condições de ser enviada para apreciação da CPG.</td>
+    		</tr>
+    	</tbody>
+    </table>
+    
+    <p><br />
+    <br />
+    <br />
+    <br />
+    &nbsp;</p>
+    
+    <p>São Paulo, _____/_____/__________</p>
+    <br />
+    &nbsp;
