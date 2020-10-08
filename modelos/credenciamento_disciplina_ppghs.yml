@@ -1,0 +1,179 @@
+titulo_da_disciplina:
+  '#type': textfield
+  '#title': 'Título da disciplina'
+  '#required': true
+solicitante:
+  '#type': select
+  '#title': Solicitante
+  '#options': solicitante
+  '#required': true
+numero_usp:
+  '#type': number
+  '#title': 'Número USP'
+ministrante:
+  '#type': textfield
+  '#title': 'Ministrante (1)'
+  '#description': 'Digite aqui o nome completo do Professor que ir&aacute; ministrar a disciplina. Caso seja o mesmo que o solicitante, desconsidere esse campo.'
+curriculo_lattes:
+  '#type': url
+  '#title': 'Currículo lattes (1)'
+  '#description': 'Insira o link do Curr&iacute;culo Lattes do professor ministrante. Caso ele seja estrangeiro, Anexe o Curr&iacute;culo Vitae no campo abaixo.'
+dados_cadastrais_do_ministrante_professor_externo_:
+  '#type': document_file
+  '#title': 'Dados Cadastrais do Ministrante (1) (professor externo)'
+  '#file_placeholder': 'O ministrante dever&aacute; preencher o formul&aacute;rio Cadastro para Docente Externo:<strong>&nbsp;<a href="http://pos.fflch.usp.br/sites/pos.fflch.usp.br/files/Cadastro%20para%20participante%20em%20banca%20-%20atualizado%20em%2004.05.17.doc"><u>Vers&atilde;o em Portugu&ecirc;s</u>&nbsp;</a>&nbsp;<u><a href="http://pos.fflch.usp.br/sites/pos.fflch.usp.br/files/Cadastro%20para%20professores%20visitantes%20-%20em%20ingles%20-%20atualizado%20em%2004.05.17.doc">Vers&atilde;o em Ingl&ecirc;s</a></u><a href="http://pos.fflch.usp.br/sites/pos.fflch.usp.br/files/Cadastro%20para%20professores%20visitantes%20-%20em%20ingles%20-%20atualizado%20em%2004.05.17.doc">&nbsp;&nbsp;</a><u><a href="http://pos.fflch.usp.br/sites/pos.fflch.usp.br/files/Cadastro%20para%20docente%20externo%20-%20em%20franc%C3%AAs%20(CORRIGIDO).doc">Vers&atilde;o em Franc&ecirc;s</a></u></strong>.'
+  '#file_preview': file
+  '#max_filesize': '2'
+  '#file_extensions': 'pdf doc docx odt'
+ministrante2:
+  '#type': textfield
+  '#title': 'Ministrante (2)'
+  '#description': 'Digite aqui o nome completo do Professor que ir&aacute; ministrar a disciplina. Caso seja o mesmo que o solicitante, desconsidere esse campo.'
+curriculo_vitae2:
+  '#type': document_file
+  '#title': 'Currículo vitae (2)'
+  '#max_filesize': '2'
+  '#file_extensions': 'pdf doc docx odt'
+dados_cadastrais_do_ministrante_professor_externo_2:
+  '#type': document_file
+  '#title': 'Dados Cadastrais do Ministrante (2) (professor externo)'
+  '#file_placeholder': 'O ministrante dever&aacute; preencher o formul&aacute;rio Cadastro para Docente Externo:<strong>&nbsp;<a href="http://pos.fflch.usp.br/sites/pos.fflch.usp.br/files/Cadastro%20para%20participante%20em%20banca%20-%20atualizado%20em%2004.05.17.doc"><u>Vers&atilde;o em Portugu&ecirc;s</u>&nbsp;</a>&nbsp;<u><a href="http://pos.fflch.usp.br/sites/pos.fflch.usp.br/files/Cadastro%20para%20professores%20visitantes%20-%20em%20ingles%20-%20atualizado%20em%2004.05.17.doc">Vers&atilde;o em Ingl&ecirc;s</a></u><a href="http://pos.fflch.usp.br/sites/pos.fflch.usp.br/files/Cadastro%20para%20professores%20visitantes%20-%20em%20ingles%20-%20atualizado%20em%2004.05.17.doc">&nbsp;&nbsp;</a><u><a href="http://pos.fflch.usp.br/sites/pos.fflch.usp.br/files/Cadastro%20para%20docente%20externo%20-%20em%20franc%C3%AAs%20(CORRIGIDO).doc">Vers&atilde;o em Franc&ecirc;s</a></u></strong>.'
+  '#file_preview': file
+  '#max_filesize': '2'
+  '#file_extensions': 'pdf doc docx odt'
+ministrante3:
+  '#type': textfield
+  '#title': 'Ministrante (3)'
+  '#description': 'Digite aqui o nome completo do Professor que ir&aacute; ministrar a disciplina. Caso seja o mesmo que o solicitante, desconsidere esse campo.'
+curriculo_vitae3:
+  '#type': document_file
+  '#title': 'Currículo vitae (3)'
+  '#max_filesize': '2'
+  '#file_extensions': 'pdf doc docx odt'
+dados_cadastrais_do_ministrante_3_professor_externo_:
+  '#type': document_file
+  '#title': 'Dados Cadastrais do Ministrante (3) (professor externo)'
+  '#file_placeholder': 'O ministrante dever&aacute; preencher o formul&aacute;rio Cadastro para Docente Externo:<strong>&nbsp;<a href="http://pos.fflch.usp.br/sites/pos.fflch.usp.br/files/Cadastro%20para%20participante%20em%20banca%20-%20atualizado%20em%2004.05.17.doc"><u>Vers&atilde;o em Portugu&ecirc;s</u>&nbsp;</a>&nbsp;<u><a href="http://pos.fflch.usp.br/sites/pos.fflch.usp.br/files/Cadastro%20para%20professores%20visitantes%20-%20em%20ingles%20-%20atualizado%20em%2004.05.17.doc">Vers&atilde;o em Ingl&ecirc;s</a></u><a href="http://pos.fflch.usp.br/sites/pos.fflch.usp.br/files/Cadastro%20para%20professores%20visitantes%20-%20em%20ingles%20-%20atualizado%20em%2004.05.17.doc">&nbsp;&nbsp;</a><u><a href="http://pos.fflch.usp.br/sites/pos.fflch.usp.br/files/Cadastro%20para%20docente%20externo%20-%20em%20franc%C3%AAs%20(CORRIGIDO).doc">Vers&atilde;o em Franc&ecirc;s</a></u></strong>.'
+  '#file_preview': file
+  '#max_filesize': '2'
+  '#file_extensions': 'pdf doc docx odt'
+lembrete:
+  '#type': message
+  '#message_message': |
+    <ul>
+    	<li>2 Cr&eacute;ditos = 10h aula te&oacute;rica, 10h aula pr&aacute;tica, 10 semin&aacute;rios, 1 semana (Curta Dura&ccedil;&atilde;o);</li>
+    	<li>4 Cr&eacute;ditos = 4h aula te&oacute;rica, 4h aula pr&aacute;tica, 2h semin&aacute;rios, 6 semanas;</li>
+    	<li>8 Cr&eacute;ditos = 4h aula te&oacute;rica, 4h aula pr&aacute;tica, 2h semin&aacute;rios, 12 semanas (Normal)</li>
+    </ul>
+    
+aulas_teoricas:
+  '#type': number
+  '#title': 'Aulas teóricas'
+  '#required': true
+aulas_praticas:
+  '#type': number
+  '#title': 'Aulas práticas'
+  '#required': true
+seminario_e_outros:
+  '#type': number
+  '#title': 'Seminário e outros'
+  '#required': true
+duracao_em_semanas:
+  '#type': number
+  '#title': 'Duração em semanas'
+  '#required': true
+objetivos:
+  '#type': textarea
+  '#title': Objetivos
+  '#required': true
+justificativa:
+  '#type': textarea
+  '#title': Justificativa
+  '#required': true
+conteudo_ementa_:
+  '#type': textarea
+  '#title': 'Conteúdo (ementa)'
+  '#required': true
+bibliografia:
+  '#type': textarea
+  '#title': Bibliografia
+  '#required': true
+criterio_de_avaliacao:
+  '#type': textfield
+  '#title': 'Critério de avaliação'
+  '#required': true
+observacoes:
+  '#type': textarea
+  '#title': Observações
+e_mail:
+  '#type': email
+  '#title': E-mail
+  '#required': true
+status:
+  '#type': select
+  '#title': Status
+  '#options': status
+  '#default_value': '1'
+  '#access_create_roles':
+    - administrator
+    - fflch
+parecerista:
+  '#type': select
+  '#title': Parecerista
+  '#options': parecerista_ccp
+  '#access_create_roles':
+    - administrator
+    - fflch
+captcha:
+  '#type': captcha
+  '#captcha_type': image_captcha/Image
+  '#captcha_title': 'Qual o código que está na imagem?'
+  '#captcha_description': 'Digite os caracteres exibidos na imagem.'
+pdf_para_imprimir:
+  '#type': 'entity_print_attachment:pdf'
+  '#title': 'PDF para imprimir'
+  '#display_on': view
+  '#view_mode': twig
+  '#template': |
+    <div style="font-family:ARIAL;font-size:14px;">
+    <p cellspacing="3"><strong>Programa:</strong>&nbsp;HISTÓRIA SOCIAL<br />
+    <strong>Assunto:</strong> Credenciamento de Disciplina<br />
+    <strong>Título:</strong> {{ data.titulo_da_disciplina }}<br />
+    <strong>Docentes</strong>:&nbsp;Responsável: {{ webform_token('[webform_submission:values:solicitante]', webform_submission, [], options) }} - <strong>Código USP: </strong>{{ data.numero_usp }}<br />
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Ministrante: {{ data.ministrante }}<br />
+    <br />
+    </div>
+    <strong>Aprovado pela CCP na reuni&atilde;o de ____/____/________</strong></p>
+    
+    <hr />
+    <table align="right" border="0" cellpadding="1" cellspacing="1" style="width:2000px">
+    	<tbody>
+    		<tr>
+    			<td>Submetido em {{ created|date('d/m/Y - H:i') }}, por {{ data.solicitante }}</td>
+    		</tr>
+    	</tbody>
+    </table>
+    <br />
+    <br />
+    <br />
+    <br />
+    Código da disciplina: _______________________________
+    <p>&nbsp;</p>
+    
+    <table border="0" cellpadding="1" cellspacing="1" style="text-align:justify">
+    	<tbody>
+    		<tr>
+    			<td>
+    			<h5><strong>Informo, para os devidos fins, que a essa ocorrência está; devidamente cadastrada no Sistema Janus e a documentação foi conferida, estando em condições de ser enviada para apreciação da CPG.</strong></h5>
+    			</td>
+    		</tr>
+    	</tbody>
+    </table>
+    
+    <p><br />
+    <br />
+    &nbsp;</p>
+    
+    <h4><strong>São Paulo, _____/_____/__________</strong></h4>
+    <br />
+    &nbsp;
