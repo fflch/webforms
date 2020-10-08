@@ -1,0 +1,154 @@
+importante:
+  '#type': section
+  '#title': Importante
+  '#description': '<text-alig=justify>O<strong> prazo m&aacute;ximo</strong>&nbsp;de prorroga&ccedil;&atilde;o &eacute; de&nbsp;<strong>120 dias</strong>. O pedido deve ser entregue com no m&iacute;nimo&nbsp;<strong>60 dias</strong>&nbsp;de anteced&ecirc;ncia do prazo final de dep&oacute;sito (vide sua Ficha de Aluno - JANUS); O resultado ir&aacute; aparecer em sua Ficha de Aluno - Janus, ap&oacute;s homologa&ccedil;&atilde;o da CPG da FFLCH.</text-alig>'
+  '#help_display': title_after
+curso:
+  '#type': select
+  '#title': Curso
+  '#options':
+    1: Mestrado
+    2: Doutorado
+  '#required': true
+numero_usp:
+  '#type': number
+  '#title': 'Número USP'
+  '#required': true
+nome_completo:
+  '#type': textfield
+  '#title': 'Nome completo'
+  '#required': true
+orientador:
+  '#type': select
+  '#title': Orientador(a)
+  '#options': solicitante
+  '#required': true
+prazo_de_prorrogacao_requirido:
+  '#type': select
+  '#title': 'Prazo de prorrogação requirido'
+  '#options':
+    1: '120 dias'
+    2: '90 dias'
+    3: '60 dias'
+    4: '30 dias'
+titulo_do_trabalho:
+  '#type': textfield
+  '#title': 'Título do trabalho'
+  '#required': true
+carta_do_aluno:
+  '#type': document_file
+  '#title': 'Carta do aluno'
+  '#required': true
+  '#file_placeholder': 'Neste campo voc&ecirc; dever&aacute; inserir o arquivo eletr&ocirc;nico (.PDF .JPG), contendo a justificativa do pedido devidamente assinada.'
+  '#max_filesize': '2'
+  '#file_extensions': 'pdf doc docx odt jpg'
+manifestacao_do_orientador:
+  '#type': document_file
+  '#title': 'Manifestação do orientador'
+  '#required': true
+  '#file_placeholder': 'Neste campo voc&ecirc; dever&aacute; inserir o arquivo eletr&ocirc;nico (.pdf .doc .docx) da carta do orientador dizendo estar ciente e de acordo com o pedido.'
+  '#max_filesize': '2'
+  '#file_extensions': 'pdf doc docx odt jpg'
+copia_do_trabalho:
+  '#type': document_file
+  '#title': 'Cópia do trabalho'
+  '#required': true
+  '#file_placeholder': 'Neste campo voc&ecirc; dever&aacute; inserir o arquivo eletr&ocirc;nico (.PDF), contendo o seu trabalho completo (at&eacute; a presente data) para avalia&ccedil;&atilde;o do parecerista.'
+  '#file_extensions': pdf
+cronograma:
+  '#type': document_file
+  '#title': Cronograma
+  '#max_filesize': '2'
+  '#file_extensions': 'pdf doc docx odt jpg'
+informacoes_do_trabalho_encaminhado:
+  '#type': checkboxes_other
+  '#title': 'Informações do trabalho encaminhado'
+  '#description': 'Informe quais itens est&atilde;o sendo encaminhados'
+  '#options':
+    Introdução: Introdução
+    'Capítulo I': 'Capítulo I'
+    'Capítulo II': 'Capítulo II'
+    'Capítulo III': 'Capítulo III'
+    'Capítulo IV': 'Capítulo IV'
+    'Capítulo V': 'Capítulo V'
+    'Capítulo VI': 'Capítulo VI'
+    Conclusão: Conclusão
+    Bibliografia: Bibliografia
+  '#options_display': three_columns
+  '#other__option_label': 'Outro material'
+e_mail:
+  '#type': email
+  '#title': E-mail
+  '#required': true
+status:
+  '#type': select
+  '#title': Status
+  '#options':
+    1: Recebido
+    2: 'Enviado para parecerista'
+    3: 'Está na pauta da próxima CCP'
+    4: 'Aprovado e encaminhado à CPG'
+    5: 'Reprovado (doc. disponível para retirada)'
+  '#default_value': '1'
+  '#access_create_roles':
+    - authenticated
+  '#access_create_users':
+    - '92'
+    - '1'
+parecerista_ccp:
+  '#type': select
+  '#title': 'Parecerista da CCP'
+  '#options': parecerista_ccp
+  '#access_create_roles':
+    - authenticated
+  '#access_create_users':
+    - 92
+    - '1'
+pdf:
+  '#type': 'entity_print_attachment:pdf'
+  '#title': 'IMPRIMIR PDF'
+  '#display_on': view
+  '#view_mode': twig
+  '#template': |
+    <p cellspacing="3"><strong>Programa:</strong>&nbsp; Hist&oacute;ria Social<br />
+    <strong>Nome do(a) aluno(a):</strong> {{ data.nome_completo }} <br />
+    <strong>Código USP: </strong> {{ data.numero_usp }} - <strong>Curso:</strong> {{ webform_token('[webform_submission:values:curso]', webform_submission, [], options) }}<br />
+    <strong>Orientador(a):</strong> {{ webform_token('[webform_submission:values:orientador]', webform_submission, [], options) }}<br />
+    <strong>Período de prorrogação concedido:</strong> <strong>________ dias</strong><br />
+    <strong>Aprovado pela CCP na reunião de ____/____/________</strong></p>
+    
+    <hr />
+    <table align="right" border="0" cellpadding="1" cellspacing="1" style="width:2000px">
+    	<tbody>
+    		<tr>
+    			<td>Submetido em {{ created|date('d/m/Y - H:i') }}, por {{ data.nome_completo }}</td>
+    		</tr>
+    	</tbody>
+    </table>
+    &nbsp;
+    
+    <table border="0" cellpadding="1" cellspacing="1" style="text-align:justify">
+    	<tbody>
+    		<tr>
+    			<td><strong>Informo, para os devidos fins, que essa ocorr&ecirc;ncia est&aacute; devidamente cadastrada no Sistema Janus e a documenta&ccedil;&atilde;o foi conferida, estando em condi&ccedil;&otilde;es de ser enviada para aprecia&ccedil;&atilde;o da CPG.</strong></td>
+    		</tr>
+    	</tbody>
+    </table>
+    
+    <p><br />
+    <br />
+    <br />
+    &nbsp;</p>
+    
+    <h4><strong>São Paulo, _____/_____/__________</strong></h4>
+    <br />
+    <br />
+    <br />
+    <br />
+    &nbsp;
+    
+captcha:
+  '#type': captcha
+  '#captcha_type': image_captcha/Image
+  '#captcha_title': 'Qual o código que está na imagem?'
+  '#captcha_description': 'Digite os caracteres exibidos na imagem.'
