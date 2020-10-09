@@ -1,0 +1,139 @@
+importante:
+  '#type': section
+  '#title': 'Informe para os Bolsistas'
+  '#description': |
+    Bolsistas CAPES ou CNPq t&ecirc;m direito &agrave; solicita&ccedil;&atilde;o de prorroga&ccedil;&atilde;o de sua bolsa em virtude de licen&ccedil;a-maternidade, por 4 (quatro) meses.<br />
+    <br />
+    Procedimento - enviar &agrave; secretaria do Programa de P&oacute;s-Gradua&ccedil;&atilde;o, via email <strong>spghisto@usp.br</strong> os seguintes documentos:
+    <ul>
+    	<li>Solicita&ccedil;&atilde;o de prorroga&ccedil;&atilde;o da bolsa por licen&ccedil;a-maternidade assinada;</li>
+    	<li>Comprovante de obten&ccedil;&atilde;o de licen&ccedil;a-maternidade pela USP;</li>
+    	<li>Certid&atilde;o de nascimento do beb&ecirc; ou documentos comprobat&oacute;rios de ado&ccedil;&atilde;o do beb&ecirc;;</li>
+    	<li>Carta de anu&ecirc;ncia do orientador ao pedido de prorroga&ccedil;&atilde;o.</li>
+    </ul>
+    <br />
+    Munida da documenta&ccedil;&atilde;o acima, aprovada pela CCP, a Coordena&ccedil;&atilde;o do Programa far&aacute; um of&iacute;cio a CAPES ou ao CNPq, solicitando a prorroga&ccedil;&atilde;o por licen&ccedil;a-maternidade.<br />
+    <br />
+    ATEN&Ccedil;&Atilde;O: o pedido de prorroga&ccedil;&atilde;o por licen&ccedil;a-maternidade s&oacute; pode ser acatado pela CAPES e pelo CNPq se a bolsa da p&oacute;s-graduanda ainda estiver no per&iacute;odo de vig&ecirc;ncia ou se anteceder em 4 (quatro meses) o in&iacute;cio de sua vig&ecirc;ncia (intervalo entre a sele&ccedil;&atilde;o de bolsistas e a concess&atilde;o da bolsa). Pedidos feitos ap&oacute;s o encerramento da vig&ecirc;ncia da bolsa n&atilde;o s&atilde;o acatados pela CAPES e pelo CNPq.
+    
+  '#help_display': title_after
+tipo_de_pedido:
+  '#type': select
+  '#title': 'Tipo de Pedido'
+  '#options':
+    1: 'Licença Maternidade'
+    2: 'Licença Paternidade'
+  '#required': true
+curso:
+  '#type': select
+  '#title': Curso
+  '#options':
+    1: Mestrado
+    2: Doutorado
+  '#required': true
+numero_usp:
+  '#type': number
+  '#title': 'Número USP'
+  '#required': true
+nome_completo:
+  '#type': textfield
+  '#title': 'Nome completo'
+  '#required': true
+e_bolsista_capes_:
+  '#type': select
+  '#title': 'É bolsista CAPES?'
+  '#options':
+    1: Sim
+    2: Não
+  '#required': true
+caso_seja_bolsista_fazer_sua_opcao_:
+  '#type': select
+  '#title': 'Caso seja bolsista, fazer sua opção:'
+  '#options':
+    1: 'Solicito Licença Maternidade por 120 dias sem suspensão do pagamento da bolsa'
+    2: 'Solicito 180 dias com suspensão do pagamento da bolsa'
+  '#states':
+    visible:
+      ':input[name="e_bolsista_capes_"]':
+        value: '1'
+  '#required': true
+e_mail:
+  '#type': email
+  '#title': E-mail
+  '#required': true
+orientador_a_:
+  '#type': select
+  '#title': Orientador(a)
+  '#options': solicitante
+  '#required': true
+copia_do_trabalho:
+  '#type': document_file
+  '#title': 'Certidão de Nascimento'
+  '#required': true
+  '#format_items': comma
+  '#file_extensions': 'pdf img bmp'
+status:
+  '#type': select
+  '#title': Status
+  '#options':
+    1: Recebido
+    2: 'Enviado para parecerista'
+    3: 'Está na pauta da próxima CCP'
+    4: 'Aprovado e encaminhado à CPG'
+    5: 'Reprovado (doc. disponível para retirada)'
+  '#default_value': '1'
+  '#access_create_roles':
+    - authenticated
+  '#access_create_users':
+    - '92'
+    - '1'
+captcha:
+  '#type': captcha
+  '#captcha_type': image_captcha/Image
+  '#captcha_title': 'Qual o código que está na imagem?'
+  '#captcha_description': 'Digite os caracteres exibidos na imagem.'
+pdf:
+  '#type': 'entity_print_attachment:pdf'
+  '#title': pdf
+  '#display_on': view
+  '#view_mode': twig
+  '#template': |
+    <div style="font-family:ARIAL; font-size:14px;">
+    <p cellspacing="3"><strong>Programa:</strong>&nbsp; História Social<br />
+    <strong>Nome do(a) aluno(a):</strong> {{ data.nome_completo }}<br />
+    <strong>Código USP: </strong>{{ data.numero_usp }}&nbsp; &nbsp; &nbsp; <strong>Curso:</strong> {{ webform_token('[webform_submission:values:curso]', webform_submission, [], options) }}<br />
+    <br />
+    <strong>É bolsista CAPES?</strong> {{ webform_token('[webform_submission:values:e_bolsista_capes_]', webform_submission, [], options) }}<br />
+    <br />
+    <strong>No caso de bolsista, a opção escolhida foi:</strong> {{ webform_token('[webform_submission:values:caso_seja_bolsista_fazer_sua_opcao_]', webform_submission, [], options) }}<br />
+    &nbsp;</p></div>
+    
+    <hr />
+    <table align="right" border="0" cellpadding="1" cellspacing="1" style="width:2000px">
+    	<tbody>
+    		<tr>
+    			<td>Submetido em {{ created|date('d/m/Y - H:i') }}, por {{ data.nome_completo }}</td>
+    		</tr>
+    	</tbody>
+    </table>
+    &nbsp;
+    
+    <p>&nbsp;</p>
+    
+    <table border="0" cellpadding="1" cellspacing="1" style="text-align:justify">
+    	<tbody>
+    		<tr>
+    			<td><strong>Informo, para os devidos fins, que essa ocorrência está devidamente cadastrada no Sistema Janus e a documentação foi conferida, estando em condições de ser enviada para apreciação da CPG.</strong></td>
+    		</tr>
+    	</tbody>
+    </table>
+    
+    <p><br />
+    <br />
+    <br />
+    <br />
+    &nbsp;</p>
+    
+    <h4><strong>São Paulo, _____/_____/__________</strong></h4>
+    <br />
+    &nbsp;
